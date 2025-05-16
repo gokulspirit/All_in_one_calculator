@@ -127,7 +127,7 @@ label[for="shape"] {
 }
 
 /* Input fields dynamically added */
-#inputs input {
+#Geo-inputs input {
   width: 100%;
   padding: 8px;
   margin: 8px 0;
@@ -154,7 +154,7 @@ button:hover {
 }
 
 /* Result display */
-.result {
+.Geo-result {
   margin-top: 15px;
   padding: 10px;
   background-color: #e6ffe6;
