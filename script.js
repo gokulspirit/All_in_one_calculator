@@ -279,55 +279,72 @@ async function convertCurrency() {
   }
 }
 
-function calculateRectangle() {
-  const length = parseFloat(document.getElementById("rect-length").value);
-  const width = parseFloat(document.getElementById("rect-width").value);
-
-  if (!length || !width) {
-    document.getElementById("rect-result").innerText = "Enter valid length and width.";
-    return;
-  }
-
-  const area = length * width;
-  const perimeter = 2 * (length + width);
-
-  document.getElementById("rect-result").innerText = 
-    `Area: ${area.toFixed(2)}, Perimeter: ${perimeter.toFixed(2)}`;
+/* Container styling */
+#geometry-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
 }
 
-function calculateCircle() {
-  const radius = parseFloat(document.getElementById("circle-radius").value);
-
-  if (!radius) {
-    document.getElementById("circle-result").innerText = "Enter a valid radius.";
-    return;
-  }
-
-  const area = Math.PI * radius * radius;
-  const circumference = 2 * Math.PI * radius;
-
-  document.getElementById("circle-result").innerText = 
-    `Area: ${area.toFixed(2)}, Circumference: ${circumference.toFixed(2)}`;
+/* Label */
+label[for="shape"] {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
 }
 
-function calculateTriangle() {
-  const base = parseFloat(document.getElementById("tri-base").value);
-  const height = parseFloat(document.getElementById("tri-height").value);
-  const side1 = parseFloat(document.getElementById("tri-side1").value);
-  const side2 = parseFloat(document.getElementById("tri-side2").value);
-  const side3 = parseFloat(document.getElementById("tri-side3").value);
-
-  if (!base || !height || !side1 || !side2 || !side3) {
-    document.getElementById("tri-result").innerText = "Enter all triangle dimensions.";
-    return;
-  }
-
-  const area = 0.5 * base * height;
-  const perimeter = side1 + side2 + side3;
-
-  document.getElementById("tri-result").innerText = 
-    `Area: ${area.toFixed(2)}, Perimeter: ${perimeter.toFixed(2)}`;
+/* Dropdown */
+#shape {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 16px;
 }
+
+/* Input fields dynamically added */
+#inputs input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Result display */
+.result {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #e6ffe6;
+  border: 1px solid #aaffaa;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #2d702d;
+}
+
 
 function toggleTheme() {
   const body = document.body;
@@ -342,7 +359,7 @@ function toggleTheme() {
 
 // Load theme on page load
 window.onload = () => {
-  const savedTheme = localStorage.getItem("theme");
+  const avedTheme = localStorage.getItem("theme");
   const checkbox = document.getElementById("theme-toggle");
 
   if (savedTheme === "dark") {
