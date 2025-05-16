@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All-in-One Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>All-in-One Calculator</h1>
+
+    <!-- Navigation -->
+    <nav>
+      <button onclick="switchTab('basic')">Basic</button>
+      <button onclick="switchTab('scientific')">Scientific</button>
+      <button onclick="switchTab('unit')">Unit Converter</button>
+      <button onclick="switchTab('financial')">Financial</button>
+      <button onclick="switchTab('date')">Date & Age</button>
+      <button onclick="switchTab('bmi')">BMI</button>
+      <button onclick="switchTab('geometry')">Geometry</button>
+    </nav>
+
+    <!-- Calculators Section -->
+    <div id="basic" class="tab active">
+      <input type="text" id="basic-display" readonly />
+      <div class="keypad">
+        <button onclick="press('7')">7</button>
+        <button onclick="press('8')">8</button>
+        <button onclick="press('9')">9</button>
+        <button onclick="press('/')">/</button>
+
+        <button onclick="press('4')">4</button>
+        <button onclick="press('5')">5</button>
+        <button onclick="press('6')">6</button>
+        <button onclick="press('*')">*</button>
+
+        <button onclick="press('1')">1</button>
+        <button onclick="press('2')">2</button>
+        <button onclick="press('3')">3</button>
+        <button onclick="press('-')">-</button>
+
+        <button onclick="press('0')">0</button>
+        <button onclick="press('.')">.</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="press('+')">+</button>
+
+        <button onclick="clearDisplay()" class="clear">C</button>
+      </div>
+    </div>
+
+    <!-- Other tabs will go here -->
+    <div id="scientific" class="tab">Coming soon...</div>
+    <div id="unit" class="tab">Coming soon...</div>
+    <div id="financial" class="tab">Coming soon...</div>
+    <div id="date" class="tab">Coming soon...</div>
+    <div id="bmi" class="tab">Coming soon...</div>
+    <div id="geometry" class="tab">Coming soon...</div>
+  </div>
+
+  <div id="scientific" class="tab">
+  <input type="text" id="scientific-display" readonly />
+  <div class="keypad">
+    <button onclick="sciPress('Math.sin(')">sin</button>
+    <button onclick="sciPress('Math.cos(')">cos</button>
+    <button onclick="sciPress('Math.tan(')">tan</button>
+    <button onclick="sciPress('Math.log(')">log</button>
+
+    <button onclick="sciPress('Math.sqrt(')">√</button>
+    <button onclick="sciPress('Math.pow(')">^</button>
+    <button onclick="sciPress('Math.PI')">π</button>
+    <button onclick="sciPress('Math.E')">e</button>
+
+    <button onclick="sciPress('(')">(</button>
+    <button onclick="sciPress(')')">)</button>
+    <button onclick="sciPress('/')">/</button>
+    <button onclick="sciPress('*')">*</button>
+
+    <button onclick="sciPress('7')">7</button>
+    <button onclick="sciPress('8')">8</button>
+    <button onclick="sciPress('9')">9</button>
+    <button onclick="sciPress('-')">-</button>
+
+    <button onclick="sciPress('4')">4</button>
+    <button onclick="sciPress('5')">5</button>
+    <button onclick="sciPress('6')">6</button>
+    <button onclick="sciPress('+')">+</button>
+
+    <button onclick="sciPress('1')">1</button>
+    <button onclick="sciPress('2')">2</button>
+    <button onclick="sciPress('3')">3</button>
+    <button onclick="calculateScientific()">=</button>
+
+    <button onclick="sciPress('0')">0</button>
+    <button onclick="sciPress('.')">.</button>
+    <button onclick="clearScientific()" class="clear">C</button>
+  </div>
+  </div>
+  
+  <div id="unit" class="tab">
+  <h3>Unit Converter</h3>
+  <select id="unit-type" onchange="renderUnitOptions()">
+    <option value="length">Length</option>
+    <option value="weight">Weight</option>
+    <option value="temperature">Temperature</option>
+  </select>
+
+  <div id="unit-converter-form">
+    <input type="number" id="unit-input" placeholder="Enter value" />
+    <select id="from-unit"></select>
+    <select id="to-unit"></select>
+    <button onclick="convertUnit()">Convert</button>
+    <div id="unit-result"></div>
+  </div>
+</div>
+
+  
+<div id="finance" class="tab">
+  <h3>Financial Tools</h3>
+  <select id="finance-tool" onchange="renderFinanceForm()">
+    <option value="emi">EMI Calculator</option>
+    <option value="discount">Discount Calculator</option>
+    <option value="gst">GST Calculator</option>
+    <option value="interest">Simple Interest</option>
+  </select>
+
+  <div id="finance-form"></div>
+  <div id="finance-result" style="margin-top: 10px; font-weight: bold;"></div>
+</div>
+  
+  <div id="date" class="tab">
+  <h3>Date & Age Calculator</h3>
+
+  <h4>Age Calculator</h4>
+  <input type="date" id="dob" />
+  <button onclick="calculateAge()">Calculate Age</button>
+  <div id="age-result"></div>
+
+  <h4 style="margin-top:20px;">Date Difference</h4>
+  <input type="date" id="date1" />
+  <input type="date" id="date2" />
+  <button onclick="calculateDateDifference()">Calculate Difference</button>
+  <div id="date-diff-result"></div>
+</div>
+
+<div id="bmi" class="tab">
+  <h3>BMI Calculator</h3>
+  <input id="bmi-weight" type="number" placeholder="Weight (kg)" />
+  <input id="bmi-height" type="number" placeholder="Height (cm)" />
+  <button onclick="calculateBMI()">Calculate BMI</button>
+  <div id="bmi-result"></div>
+</div>
+
+  <div id="currency" class="tab">
+  <h3>Currency Converter</h3>
+  <input type="number" id="currency-amount" placeholder="Amount" />
+  
+  <select id="currency-from">
+    <option value="USD">USD</option>
+    <option value="EUR">EUR</option>
+    <option value="INR">INR</option>
+    <option value="GBP">GBP</option>
+    <option value="JPY">JPY</option>
+    <!-- Add more as needed -->
+  </select>
+
+  <select id="currency-to">
+    <option value="INR">INR</option>
+    <option value="USD">USD</option>
+    <option value="EUR">EUR</option>
+    <option value="GBP">GBP</option>
+    <option value="JPY">JPY</option>
+    <!-- Add more as needed -->
+  </select>
+
+  <button onclick="convertCurrency()">Convert</button>
+  <div id="currency-result"></div>
+</div>
+
+  <div id="geometry" class="tab">
+  <h3>Geometry Calculator</h3>
+
+  <h4>Rectangle</h4>
+  <input type="number" id="rect-length" placeholder="Length" />
+  <input type="number" id="rect-width" placeholder="Width" />
+  <button onclick="calculateRectangle()">Calculate Area & Perimeter</button>
+  <div id="rect-result"></div>
+
+  <h4 style="margin-top:20px;">Circle</h4>
+  <input type="number" id="circle-radius" placeholder="Radius" />
+  <button onclick="calculateCircle()">Calculate Area & Circumference</button>
+  <div id="circle-result"></div>
+
+  <h4 style="margin-top:20px;">Triangle</h4>
+  <input type="number" id="tri-base" placeholder="Base" />
+  <input type="number" id="tri-height" placeholder="Height" />
+  <input type="number" id="tri-side1" placeholder="Side 1" />
+  <input type="number" id="tri-side2" placeholder="Side 2" />
+  <input type="number" id="tri-side3" placeholder="Side 3" />
+  <button onclick="calculateTriangle()">Calculate Area & Perimeter</button>
+  <div id="tri-result"></div>
+</div>
+
+<div id="theme-toggle-container">
+  <label>
+    <input type="checkbox" id="theme-toggle" onchange="toggleTheme()" />
+    Dark Mode
+  </label>
+</div>
+
+  <div id="history-container">
+  <h3>Calculation History</h3>
+  <ul id="history-list"></ul>
+  <button onclick="clearHistory()">Clear History</button>
+</div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
