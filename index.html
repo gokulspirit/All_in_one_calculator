@@ -169,27 +169,33 @@
 </div>
 
   <div id="geometry" class="tab">
+    <div id="geometry-container">
   <h3>Geometry Calculator</h3>
 
-  <h4>Rectangle</h4>
-  <input type="number" id="rect-length" placeholder="Length" />
-  <input type="number" id="rect-width" placeholder="Width" />
-  <button onclick="calculateRectangle()">Calculate Area & Perimeter</button>
-  <div id="rect-result"></div>
+    <label for="shape">Choose a shape:</label>
+    <select id="shape" onchange="renderInputs()">
+      <option value="">-- Select --</option>
+      <option value="circle">Circle</option>
+      <option value="triangle">Triangle</option>
+      <option value="square">Square</option>
+      <option value="rectangle">Rectangle</option>
+      <option value="pentagon">Pentagon</option>
+      <option value="hexagon">Hexagon</option>
+      <option value="octagon">Octagon</option>
+      <option value="ellipse">Ellipse</option>
+      <option value="sphere">Sphere</option>
+      <option value="cube">Cube</option>
+      <option value="cuboid">Cuboid</option>
+      <option value="cylinder">Cylinder</option>
+      <option value="cone">Cone</option>
+      <option value="pyramid">Pyramid</option>
+    </select>
 
-  <h4 style="margin-top:20px;">Circle</h4>
-  <input type="number" id="circle-radius" placeholder="Radius" />
-  <button onclick="calculateCircle()">Calculate Area & Circumference</button>
-  <div id="circle-result"></div>
-
-  <h4 style="margin-top:20px;">Triangle</h4>
-  <input type="number" id="tri-base" placeholder="Base" />
-  <input type="number" id="tri-height" placeholder="Height" />
-  <input type="number" id="tri-side1" placeholder="Side 1" />
-  <input type="number" id="tri-side2" placeholder="Side 2" />
-  <input type="number" id="tri-side3" placeholder="Side 3" />
-  <button onclick="calculateTriangle()">Calculate Area & Perimeter</button>
-  <div id="tri-result"></div>
+    <div id="inputs"></div>
+    <button onclick="calculate()">Calculate</button>
+    <div id="result" class="result"></div>
+  </div>
+     </div>
 </div>
 </div>
   
