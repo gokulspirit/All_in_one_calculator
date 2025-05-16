@@ -1,0 +1,168 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 400px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+nav {
+  margin-bottom: 20px;
+}
+
+nav button {
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#basic-display {
+  width: 100%;
+  height: 40px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.keypad button {
+  padding: 15px;
+  font-size: 1.2rem;
+  border: none;
+  background: #eee;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.keypad .clear {
+  grid-column: span 4;
+  background: #ff4d4d;
+  color: white;
+}
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+}
+
+#unit-converter-form {
+  margin-top: 10px;
+}
+
+#unit-result {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+#date input[type="date"] {
+  margin-bottom: 10px;
+  display: block;
+}
+
+#age-result,
+#date-diff-result {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+#bmi input {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#bmi-result {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+#currency input, #currency select {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#currency-result {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#geometry input {
+  display: block;
+  margin-bottom: 8px;
+}
+
+#rect-result,
+#circle-result,
+#tri-result {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+/* Default light theme styles assumed */
+
+.dark-theme {
+  background-color: #121212;
+  color: #eee;
+}
+
+.dark-theme input,
+.dark-theme select,
+.dark-theme button {
+  background-color: #333;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+.dark-theme button:hover {
+  background-color: #444;
+}
+
+#theme-toggle-container {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#history-container {
+  margin-top: 30px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+#history-list {
+  list-style-type: none;
+  max-height: 150px;
+  overflow-y: auto;
+  padding-left: 0;
+}
+
+#history-list li {
+  padding: 6px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+#history-list li:hover {
+  background-color: #f0f0f0;
+}
+
+button {
+  cursor: pointer;
+  padding: 6px 12px;
+  margin-top: 8px;
+}
+
