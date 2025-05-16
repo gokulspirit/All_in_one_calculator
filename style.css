@@ -102,16 +102,71 @@ nav button {
   margin-top: 10px;
 }
 
-#geometry input {
+
+/* Container styling */
+#geometry-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Label */
+label[for="shape"] {
+  font-weight: bold;
   display: block;
   margin-bottom: 8px;
 }
 
-#rect-result,
-#circle-result,
-#tri-result {
+/* Dropdown */
+#shape {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+/* Input fields dynamically added */
+#inputs input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Result display */
+.result {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #e6ffe6;
+  border: 1px solid #aaffaa;
+  border-radius: 6px;
   font-weight: bold;
-  margin-top: 8px;
+  color: #2d702d;
 }
 
 /* Default light theme styles assumed */
