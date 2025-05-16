@@ -104,14 +104,9 @@ nav button {
 
 
 /* Container styling */
-#Geometry {
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 12px;
-  background: #f9f9f9;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', sans-serif;
+#geometry input {
+  display: block;
+  margin-bottom: 8px;
 }
 
 /* Label */
